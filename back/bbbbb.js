@@ -5,9 +5,10 @@ const app = express();
 const PORT = 8080;
 
 app.use(express.static("front"));
+require('dotenv').config(); // 환경 변수 사용 설정
 
 const openai = new OpenAI({
-  apiKey: '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', 
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 
